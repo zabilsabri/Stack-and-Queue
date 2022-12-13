@@ -14,11 +14,6 @@ class stack{
         return end($this->data);
     }
 
-    public function isEmpty() // Mengecek apakah data di dalam array masih ada atau sudah habis
-    {
-        return empty($this->data);
-    }
-
     public function pop() // Menghapus data yang paling terakhir di dalam array
     {
         return array_pop($this->data);
@@ -31,7 +26,11 @@ $stack->push('Minuman');
 $stack->push('Makanan');
 $stack->push('Cemilan');
 $stack->push('Soda');
-// $stack->pop();
 
-echo($stack->peek());
-//var_dump($stack->data);
+# Last In First Out (LIFO)
+$stack->pop(); // mengeluarkan soda
+$stack->pop(); // mengeluarkan cemilan
+$stack->pop(); // mengeluarkan makanan
+
+
+echo($stack->peek()); // minuman
