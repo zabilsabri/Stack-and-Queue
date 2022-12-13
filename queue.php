@@ -14,11 +14,6 @@ class queue{
         return reset($this->data);
     }
 
-    public function isEmpty() // Mengecek apakah data di dalam array masih ada atau sudah habis
-    {
-        return empty($this->data);
-    }
-
     public function shift() // Menghapus data yang paling Pertama di dalam array
     {
         return array_shift($this->data);
@@ -31,7 +26,10 @@ $queue->push('Minuman');
 $queue->push('Makanan');
 $queue->push('Cemilan');
 $queue->push('Soda');
-// $queue->shift();
 
-echo ($queue->peek());
-//var_dump($queue->data);
+# First In First Out (FIFO)
+$queue->shift(); // Mengeluarkan Minuman
+$queue->shift(); // Mengeluarkan Makanan
+$queue->shift(); // Mengeluarkan Cemilan
+
+echo ($queue->peek()); // Soda
